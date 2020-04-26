@@ -27,10 +27,12 @@ const Clock: React.FC<Props> = ({
       let angle = 0
 
       const MAX_STROKE_COLOR = 200
-      const MIN_STROKE_COLOR = 150
+      const MIN_STROKE_COLOR = 100
 
       let strokeDelta = 0
       let strokeColor = MIN_STROKE_COLOR
+
+      let step = 0
 
       p.setup = () => {
         p.createCanvas(width, height)
@@ -45,9 +47,12 @@ const Clock: React.FC<Props> = ({
         yNoise = p.random(10)
         strokeDelta = -1
         strokeColor = 255
+      }
 
-        for (let i = 0; i < iterationCount; i += 1) {
+      p.draw = () => {
+        if (step < iterationCount) {
           drawLine()
+          step += 1
         }
       }
 

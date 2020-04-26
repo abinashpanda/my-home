@@ -18,7 +18,6 @@ const ClockFrame: React.FC<Props> = ({
 }) => {
   const container = useRef<HTMLDivElement | null>(null)
   const containerRect = useRect(container)
-  console.log(containerRect)
 
   return (
     <div

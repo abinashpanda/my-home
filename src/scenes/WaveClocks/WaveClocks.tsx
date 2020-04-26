@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react'
-import Masonry from 'react-masonry-component'
+import Masonry from 'react-masonry-css'
 import { range, random } from 'lodash-es'
 import ClockFrame from './components/ClockFrame'
 
@@ -19,7 +19,7 @@ const WaveClocks = () => {
   return (
     <div className="w-screen min-h-screen overflow-x-hidden bg-gray-100">
       <div className="max-w-6xl py-4 mx-auto">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mb-4">
           <div>
             <div className="text-3xl font-semibold text-gray-900">
               Wave Clocks
@@ -50,18 +50,20 @@ const WaveClocks = () => {
             </svg>
           </button>
         </div>
-        <div className="-mx-4">
-          <Masonry>
-            {frames.map((frame) => (
-              <div key={frame.id} className="w-1/4 p-4">
-                <ClockFrame
-                  height={frame.height}
-                  iterationCount={frame.iterationCount}
-                />
-              </div>
-            ))}
-          </Masonry>
-        </div>
+        <Masonry
+          className="flex -ml-4"
+          columnClassName="pl-4"
+          breakpointCols={{ default: 4 }}
+        >
+          {frames.map((frame) => (
+            <ClockFrame
+              key={frame.id}
+              height={frame.height}
+              iterationCount={frame.iterationCount}
+              className="mb-4"
+            />
+          ))}
+        </Masonry>
       </div>
     </div>
   )

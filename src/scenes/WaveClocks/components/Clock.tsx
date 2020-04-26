@@ -38,6 +38,7 @@ const Clock: React.FC<Props> = ({
         p.frameRate(30)
         p.smooth()
         p.noFill()
+
         angleNoise = p.random(10)
         radiusNoise = p.random(10)
         xNoise = p.random(10)

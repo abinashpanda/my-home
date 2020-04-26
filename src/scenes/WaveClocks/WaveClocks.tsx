@@ -17,7 +17,7 @@ const WaveClocks = () => {
   }, [])
 
   return (
-    <div className="w-screen min-h-screen bg-gray-100">
+    <div className="w-screen min-h-screen overflow-x-hidden bg-gray-100">
       <div className="max-w-6xl py-4 mx-auto">
         <div className="flex items-center justify-between">
           <div>

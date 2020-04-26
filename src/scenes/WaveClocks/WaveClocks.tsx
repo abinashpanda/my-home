@@ -19,7 +19,7 @@ const WaveClocks = () => {
   return (
     <div className="w-screen min-h-screen overflow-x-hidden bg-gray-100">
       <div className="max-w-6xl py-4 mx-auto">
-        <div className="mb-12">
+        <div className="mb-6">
           <div className="text-3xl font-semibold text-gray-900">
             Wave Clocks
           </div>
